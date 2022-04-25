@@ -10,9 +10,7 @@ function openRequest(){
         },
         success: function(result){
             if (result.Response == "True"){
-            console.log(result);
             let movies = result.Search;
-            console.log(movies);
             $.each(movies, function(i, data){
             $('#movie-list').append(`
                 <div class="card mx-2 my-4 bg-dark text-light" style="width: 18rem;">
@@ -53,7 +51,6 @@ $("#movie-list").on('click','#see-detail','.modal-fade', function(){
             'i': $(this).data('id')
         },
         success: function(result){
-            console.log(result);
             $('.modal-title').html(result.Title);
             $('.modal-body').html(`
             <div class="container-fluid">
